@@ -4,7 +4,7 @@ import requests
 app = Flask(__name__)
 
 BASE_URL = "http://api.weatherstack.com/current"
-API_KEY = "340a2e5e329d3f682d87057f978e3fd1"  # Replace with your Weatherstack API key
+API_KEY = "1cb170164fee4b35be64d334a9327ef8"  # Replace with your Weatherstack API key
 
 def get_weather(city):
     params = {

@@ -3,8 +3,72 @@
 <head>
     <title>Weather App</title>
     <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        .weather-box { border: 1px solid #ccc; padding: 20px; margin-top: 20px; }
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            background-color: #a8d0e6; /* Light blue background */
+            color: #333;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 { 
+            color: #2c3e50; 
+            font-size: 36px; 
+            margin-bottom: 30px; 
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            width: 250px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .weather-box { 
+            border: 1px solid #ccc; 
+            padding: 20px; 
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .weather-box h2 { 
+            color: #2980b9; 
+            font-size: 24px; 
+            margin-bottom: 10px;
+        }
+        .weather-box p { 
+            font-size: 18px; 
+            margin: 8px 0; 
+        }
+        .error { 
+            color: red; 
+            font-weight: bold; 
+            text-align: center;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -16,7 +80,7 @@
 
     {% if weather %}
         {% if weather.error %}
-            <p style="color:red;">Error: {{ weather.error }}</p>
+            <p class="error">Error: {{ weather.error }}</p>
         {% else %}
             <div class="weather-box">
                 <h2>Weather for {{ request.form.city }}</h2>
